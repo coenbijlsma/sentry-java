@@ -30,10 +30,15 @@ public class JarClassLoader extends URLClassLoader  {
 	public IPlugin[] getPlugins(){
 		try{
 			String mainClassName = getMainClassName();
-			Class c = loadClass(mainClassName);
-			Method m = c.getMethod("getPlugins");
-			IPlugin[] plugins = (IPlugin[])m.invoke(null, null);
-			return plugins;
+			
+			if(mainClassName != null){
+				Class c = loadClass(mainClassName);
+				Method m = c.getMethod("getPlugins");
+				IPlugin[] plugins = (IPlugin[])m.invoke(null, null);
+				return plugins;
+			}else{
+				System.out.println("Ignoring " + _url.getFile());
+			}
 		}catch(IOException ex){
 			ex.printStackTrace(System.err);
 		}catch(ClassNotFoundException cnfe){

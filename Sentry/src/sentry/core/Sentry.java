@@ -60,17 +60,23 @@ public class Sentry implements IPluginHandler {
 	 * the IPlugins contained in each jar file.
 	 */
 	private void _fetchPlugins(){
-		/* Retrieve the current directory */
+		/* Create a file that represents the current directory */
 		File dir = new File(".");
 		
+		/* Create a filter so that only jar-files will show up */
 		FilenameFilter filter = new FilenameFilter() {
 			public boolean accept(File dir, String name){
 				File file = new File(name);
 				return (name.endsWith(".jar") && file.isFile());
 			}
 		};
+		
+		/* And retrieve the files */
 		File[] files = dir.listFiles(filter);
 		
+		/*
+		 * And retrieve the plugins from each file.
+		 */
 		for(int i = 0; i < files.length; i++){
 			try{
 				File f = files[i];
