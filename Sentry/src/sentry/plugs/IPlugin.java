@@ -1,10 +1,14 @@
 package sentry.plugs;
 
+import java.util.Collection;
+
 public interface IPlugin {
 
 	public String getName();
 	
-	public String getHookPoint();
+	public String[] getDependencies();
 	
-	public void execute();
+	public Collection<IPluginCommand> getCommands();
+	
+	public Collection<IPluginCommand> getCommandsByHookPoint(String hook);
 }

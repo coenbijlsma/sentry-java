@@ -17,7 +17,7 @@ import java.util.Properties;
  * @see Plugin
  * 
  */
-public class SimplePlugin implements IPlugin{
+public class SimplePlugin implements IPluginCommand{
 
 	/*
 	 * The name of the plug-in
@@ -70,4 +70,21 @@ public class SimplePlugin implements IPlugin{
 	public void execute() {
 		System.out.println("Executing SimplePlugin " + _name);
 	}
+
+	@Override
+	public String[] getDependencies() {
+		String[] retval = {"core.irc"};
+		return retval;
+	}
+
+	@Override
+	public Object getResult() {
+		return null;
+	}
+
+	@Override
+	public IPlugin getPlugin() {
+		return null;
+	}
+
 }

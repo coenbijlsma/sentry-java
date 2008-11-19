@@ -7,8 +7,6 @@ public interface IPluginHandler {
 
 	/**
 	 * 
-	 * @param hookpoint
-	 *            The name of the <code>HookPoint</code> to attach to.
 	 * @param plugin
 	 *            The <code>IPlugin</code> to attach to the
 	 *            <code>HookPoint</code>.
@@ -17,6 +15,6 @@ public interface IPluginHandler {
 	 *             If the requested <code>HookPoint</code> doesn't exist.
 	 * @see HookPoint
 	 */
-	public boolean attachPluginTo(String hookpoint, IPlugin plugin)
+	public boolean attachPluginCommands(IPlugin plugin)
 			throws NoSuchHookPointException;
 }
