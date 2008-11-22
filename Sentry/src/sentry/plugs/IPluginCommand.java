@@ -17,11 +17,4 @@ public interface IPluginCommand {
 	 */
 	public String[] getDependencies();
 	
-	/**
-	 * If execution of the command results in anything, say an socket connection,
-	 * you can access it through this method.
-	 * @return Object containing the result.
-	 */
-	public Object getResult();
-	
 }

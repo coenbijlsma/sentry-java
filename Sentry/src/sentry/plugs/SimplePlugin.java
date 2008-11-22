@@ -78,11 +78,6 @@ public class SimplePlugin implements IPluginCommand{
 	}
 
 	@Override
-	public Object getResult() {
-		return null;
-	}
-
-	@Override
 	public IPlugin getPlugin() {
 		return null;
 	}

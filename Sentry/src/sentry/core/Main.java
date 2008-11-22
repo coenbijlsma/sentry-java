@@ -3,7 +3,7 @@ package sentry.core;
 public class Main {
 
 	public Main(){
-		Sentry s = new Sentry();
+		new Sentry();
 	}
 	
 	public static void main(String[] args){

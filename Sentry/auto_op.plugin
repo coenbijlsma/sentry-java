@@ -3,7 +3,7 @@
 <properties>
 <entry key="name">auto_op</entry>
 <entry key="hookpoint">post_join_user</entry>
-<entry key="protocol">irc</entry>
+<entry key="protocol">core.irc</entry>
 <entry key="command">MODE __CHANNEL__ +o __USER__</entry>
 <entry key="dependencies">irc</entry>
 </properties>
